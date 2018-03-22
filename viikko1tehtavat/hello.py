@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 class Item:
-    def __init__(self, name):
+    def __inite__(self, name):
         self.name = name
 
 nimi = "Esimerkki"
@@ -27,4 +27,4 @@ def content():
     return render_template("demo.html", nimi=nimi, lista=lista, esineet=esineet)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
