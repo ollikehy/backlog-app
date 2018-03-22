@@ -11,3 +11,6 @@ Toimintoja:
 * Pelien rajaaminen esim. julkaisijan tai konsolin perusteella
 
 [Demon heroku](https://sheltered-tundra-91193.herokuapp.com/)
+
+**Viikon 1 tehtävät löytyvät viikko1tehtvat hakemistosta,
+kaikki muut liittyy viikon 2 tehtäviin**
