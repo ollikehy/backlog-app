@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<h3>Add a new game to the database</h3>
+<form method="POST" action="{{ url_for('games_create') }}">
+  <div>
+    Name: <input type="text" name="name"/>
+  </div>
+  <div>
+    Release year: <input type="number" name="releaseYear"/>
+  </div>
+  <div>
+    Genre: <input type="text" name="genre"/>
+  </div>
+  <input type="submit" value="Add a new game"/>
+</form>
+{% endblock %}

@@ -2,15 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>TodoApp</title>
+    <title>Video game backlog</title>
   </head>
 
   <body>
     <ul>
-      <li><a href="{{ url_for('tasks_index') }}">List tasks</a></li>
-      <li><a href="{{ url_for('tasks_form') }}">Add a task</a></li>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="{{ url_for('games_index') }}">List games</a></li>
+      <li><a href="{{ url_for('games_form') }}">Add a game</a></li>
     </ul>        
-
     {% block body %}
       <p>
         Content.
