@@ -7,6 +7,3 @@ Työn aiheena on ns. "backlogin" luominen videopeleille. Sovelluksen avulla käy
 [**Käyttötapaukset**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
 
 ![Alustava tietokantakaavio](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantakaavio.png?raw=true)
-
-**Viikon 1 tehtävät löytyvät viikko1tehtavat hakemistosta,
-kaikki muu liittyy viikon 2 tehtäviin**
