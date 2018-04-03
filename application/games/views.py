@@ -1,6 +1,8 @@
-from application import app, db
 from flask import redirect, render_template, request, url_for
+
+from application import app, db
 from application.games.models import VideoGame
+from application.games.forms import GameForm
 
 @app.route("/games", methods=["GET"])
 def games_index():
@@ -8,11 +10,16 @@ def games_index():
 
 @app.route("/games/new/")
 def games_form():
-    return render_template("games/new.html")
+    return render_template("games/new.html", form = GameForm())
 
 @app.route("/games/", methods=["POST"])
 def games_create():
-    g = VideoGame(request.form.get("name"), request.form.get("releaseYear"), request.form.get("genre"))
+    form = GameForm(request.form)
+
+    if not form.validate():
+        return render_template("games/new.html", form = form)
+
+    g = VideoGame(form.name.data, form.releaseYear.data, form.genre.data)
 
     db.session().add(g)
     db.session().commit()
