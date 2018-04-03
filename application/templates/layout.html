@@ -6,8 +6,15 @@
   </head>
 
   <body>
+    {% if current_user.is_authenticated %}
+    <p>
+      Logged in with user {{ current_user.name }} <a href="{{ url_for('auth_logout') }}">Logout</a>
+    </p>
+    {% else %}
+    <a href="{{ url_for('auth_login') }}">Login</a> <a href="{{ url_for('auth_form') }}">Register</a>
+    {% endif %}
     <ul>
-      <li><a href="/">Homepage</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="{{ url_for('games_index') }}">List games</a></li>
       <li><a href="{{ url_for('games_form') }}">Add a game</a></li>
     </ul>        
