@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block body %}
+{{ error }}
 <h3>List of all the games in database</h3>
   <table>
     <tr>
@@ -13,7 +14,7 @@
       <td>{{ game.name }}</td>
       <td>{{ game.releaseYear }}</td>
       <td>{{ game.genre }}</td>
-      <td><a href="/games/{{game.id}}">Edit</a></td>
+      <td><a href="/games/{{game.id}}">View</a></td>
     </tr>
     {% endfor %}
     </table>

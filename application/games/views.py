@@ -29,7 +29,12 @@ def games_create():
   
     return redirect(url_for("games_index"))
 
+
 @app.route("/games/<game_id>", methods=["GET"])
+def game_view(game_id):
+    return render_template("games/game.html", game = VideoGame.query.get(game_id))
+
+@app.route("/games/<game_id>/edit", methods=["GET"])
 @login_required
 def games_edit(game_id):
     return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = GameForm())
@@ -38,6 +43,9 @@ def games_edit(game_id):
 @login_required
 def games_update(game_id):
     form = GameForm(request.form)
+
+    if not form.validate():
+        return render_template("games/list.html", error = "Invalid data, please try again")
 
     g = VideoGame.query.get(game_id)
     g.name = form.name.data
