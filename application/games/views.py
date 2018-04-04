@@ -57,6 +57,7 @@ def games_update(game_id):
     return redirect(url_for("games_index"))
 
 @app.route("/games/<game_id>/delete", methods=["POST"])
+@login_required
 def game_delete(game_id):
     g = VideoGame.query.get(game_id)
     db.session().delete(g)
