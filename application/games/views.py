@@ -55,3 +55,11 @@ def games_update(game_id):
     db.session().commit()
 
     return redirect(url_for("games_index"))
+
+@app.route("/games/<game_id>/delete", methods=["POST"])
+def game_delete(game_id):
+    g = VideoGame.query.get(game_id)
+    db.session().delete(g)
+    db.session().commit()
+
+    return redirect(url_for("games_index"))
