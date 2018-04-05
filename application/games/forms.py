@@ -8,3 +8,11 @@ class GameForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+class EditForm(FlaskForm):
+    name = StringField("Name", [validators.Optional(), validators.Length(min=1)])
+    releaseYear = StringField("Release year", [validators.Optional(), validators.length(min=4)])
+    genre = StringField("Genre", [validators.Optional()])
+
+    class Meta:
+        csrf = False

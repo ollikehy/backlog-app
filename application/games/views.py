@@ -3,7 +3,7 @@ from flask_login import login_required
 
 from application import app, db
 from application.games.models import VideoGame
-from application.games.forms import GameForm
+from application.games.forms import GameForm, EditForm
 
 @app.route("/games", methods=["GET"])
 def games_index():
@@ -37,20 +37,23 @@ def game_view(game_id):
 @app.route("/games/<game_id>/edit", methods=["GET"])
 @login_required
 def games_edit(game_id):
-    return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = GameForm())
+    return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = EditForm())
 
 @app.route("/games/<game_id>", methods=["POST"])
 @login_required
 def games_update(game_id):
-    form = GameForm(request.form)
+    form = EditForm(request.form)
 
     if not form.validate():
-        return render_template("games/list.html", error = "Invalid data, please try again")
+        return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = form)
 
     g = VideoGame.query.get(game_id)
-    g.name = form.name.data
-    g.releaseYear = form.releaseYear.data
-    g.genre = form.genre.data
+    if form.name.data != "":
+        g.name = form.name.data
+    if form.releaseYear.data != "":
+        g.releaseYear = form.releaseYear.data
+    if form.genre.data != "":
+        g.genre = form.genre.data
 
     db.session().commit()
 
