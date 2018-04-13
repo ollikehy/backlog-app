@@ -2,12 +2,25 @@ from flask import redirect, render_template, request, url_for
 from flask_login import login_required
 
 from application import app, db
-from application.games.models import VideoGame
+from application.games.models import VideoGame, GameInstance
+from application.auth.models import User
 from application.games.forms import GameForm, EditForm
 
 @app.route("/games", methods=["GET"])
 def games_index():
     return render_template("games/list.html", games = VideoGame.query.all())
+
+@app.route("/<user_id>/games", methods=["GET"])
+def user_games(user_id):
+    games = GameInstance.find_games_by_user(user_id)
+    return render_template("games/userlist.html", user = User.query.get(user_id), games = games)
+
+@app.route("/<user_id>/games/<game_id>", methods=["POST"])
+def user_add_game(user_id, game_id):
+    g = GameInstance(user_id, game_id)
+    db.session().add(g)
+    db.session().commit()
+    return redirect(url_for("games_index"))
 
 @app.route("/games/new/")
 @login_required
