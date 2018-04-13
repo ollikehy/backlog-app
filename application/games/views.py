@@ -11,11 +11,13 @@ def games_index():
     return render_template("games/list.html", games = VideoGame.query.all())
 
 @app.route("/<user_id>/games", methods=["GET"])
+@login_required
 def user_games(user_id):
     games = GameInstance.find_games_by_user(user_id)
     return render_template("games/userlist.html", user = User.query.get(user_id), games = games)
 
 @app.route("/<user_id>/games/<game_id>", methods=["POST"])
+@login_required
 def user_add_game(user_id, game_id):
     g = GameInstance(user_id, game_id)
     db.session().add(g)
