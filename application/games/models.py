@@ -39,7 +39,7 @@ class GameInstance(db.Model):
         self.completed = False
 
     def find_games_by_user(account_id):
-        stmt = text("SELECT videogame.name, videogame.genre, videogame.releaseYear "
+        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseYear "
                     "FROM videogame, gameinstance, account "
                     "WHERE account.id = :account_id "
                     "AND gameinstance.game_id = videogame.id").params(account_id=account_id)
@@ -47,6 +47,12 @@ class GameInstance(db.Model):
 
         response = []
         for row in res:
-            response.append({"name":row[0],"genre":row[1],"releaseYear":row[2]})
+            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseYear":row[3]})
         
         return response
+
+    def delete_games_by_user(account_id, game_id):
+        stmt = text("DELETE FROM gameinstance WHERE "
+                    "gameinstance.account_id = :account_id AND "
+                    "gameinstance.game_id = :game_id").params(account_id=account_id, game_id=game_id)
+        res = db.engine.execute(stmt)

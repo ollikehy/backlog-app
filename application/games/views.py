@@ -24,6 +24,13 @@ def user_add_game(user_id, game_id):
     db.session().commit()
     return redirect(url_for("games_index"))
 
+@app.route("/<user_id>/games/<game_id>/delete", methods=["POST"])
+@login_required
+def user_delete_game(user_id, game_id):
+    GameInstance.delete_games_by_user(user_id, game_id)
+
+    return redirect(url_for("user_games", user_id=user_id))
+
 @app.route("/games/new/")
 @login_required
 def games_form():

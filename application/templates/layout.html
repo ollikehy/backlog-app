@@ -34,8 +34,8 @@
             {% if current_user.is_authenticated %}
             <a href="{{ url_for('auth_logout') }}">Logout</a>
             {% else %}
-            <a href="{{ url_for('auth_form') }}">Register</a>&nbsp;&nbsp;
-            <a href="{{ url_for('auth_login') }}">Login</a>
+            <a href="{{ url_for('auth_login') }}">Login</a>&nbsp;&nbsp;
+            <a href="{{ url_for('auth_form') }}">Register</a>
             {% endif %}
           </div>      
       </div>
