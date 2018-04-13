@@ -40,8 +40,10 @@ class GameInstance(db.Model):
 
     def find_games_by_user(account_id):
         stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear "
-                    "FROM videogame, gameinstance, account "
-                    "WHERE account.id = :acc_id "
+                    "FROM videogame INNER JOIN "
+                    "gameinstance ON videogame.id = gameinstance.game_id "
+                    "INNER JOIN account ON account.id = gameinstance.account_id "
+                    "WHERE gameinstance.account_id = :acc_id "
                     "AND gameinstance.game_id = videogame.id").params(acc_id=account_id)
         res = db.engine.execute(stmt)
 
