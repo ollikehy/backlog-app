@@ -44,7 +44,7 @@ def games_create():
     if not form.validate():
         return render_template("games/new.html", form = form)
 
-    g = VideoGame(form.name.data, form.releaseYear.data, form.genre.data)
+    g = VideoGame(form.name.data, form.releaseyear.data, form.genre.data)
 
     db.session().add(g)
     db.session().commit()
@@ -72,8 +72,8 @@ def games_update(game_id):
     g = VideoGame.query.get(game_id)
     if form.name.data != "":
         g.name = form.name.data
-    if form.releaseYear.data != "":
-        g.releaseYear = form.releaseYear.data
+    if form.releaseyear.data != "":
+        g.releaseyear = form.releaseyear.data
     if form.genre.data != "":
         g.genre = form.genre.data
 

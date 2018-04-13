@@ -10,14 +10,14 @@ class VideoGame(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     name = db.Column(db.String(144), nullable=False)
-    releaseYear = db.Column(db.Integer, nullable=False)
+    releaseyear = db.Column(db.Integer, nullable=False)
     genre = db.Column(db.String(50), nullable=False)
     
     games = db.relationship("GameInstance", backref="videogame", lazy=True)
 
     def __init__(self, name, year, genre):
         self.name = name
-        self.releaseYear = year
+        self.releaseyear = year
         self.genre = genre
 
 class GameInstance(db.Model):
@@ -39,15 +39,15 @@ class GameInstance(db.Model):
         self.completed = False
 
     def find_games_by_user(account_id):
-        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseYear "
+        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear "
                     "FROM videogame, gameinstance, account "
-                    "WHERE account.id = :account_id "
-                    "AND gameinstance.game_id = videogame.id").params(account_id=account_id)
+                    "WHERE account.id = :acc_id "
+                    "AND gameinstance.game_id = videogame.id").params(acc_id=account_id)
         res = db.engine.execute(stmt)
 
         response = []
         for row in res:
-            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseYear":row[3]})
+            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseyear":row[3]})
         
         return response
 
