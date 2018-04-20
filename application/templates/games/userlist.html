@@ -3,7 +3,7 @@
 {% block body %}
 {{ error }}
 <h3>List of games by user {{ user.name }}</h3>
-  <table class="table table-sm">
+  <table class="table table-sm" style="max-width:1200px">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Game</th>
@@ -18,7 +18,7 @@
         <td>{{ game.releaseyear }}</td>
         <td>{{ game.genre }}</td>
         <td><form action="{{ url_for('user_delete_game', user_id=current_user.id, game_id=game.id) }}" method="POST">
-            <button class="btn btn-secondary" type="submit">Remove</button>
+            <button class="btn btn-danger" style="width:80px" type="submit">Remove</button>
         </form></td>  
       </tr>
     {% endfor %}
