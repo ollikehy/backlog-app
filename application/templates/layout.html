@@ -22,12 +22,12 @@
           <li class="nav-item active">
             <a class="nav-link" href="/{{current_user.id}}/games">My games</a>
           </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('games_form') }}">Add a game</a>
+          </li>
           {% endif %}
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('games_index') }}">All games</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('games_form') }}">Add a game</a>
           </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">
