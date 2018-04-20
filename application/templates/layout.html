@@ -15,20 +15,20 @@
 	    </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          {% if current_user.is_authenticated %}
-          <li class="nav-item">
-              <a class="nav-link">Logged in with user {{ current_user.name }}</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('games_index') }}">All games</a>
           </li>
+          {% if current_user.is_authenticated %}
           <li class="nav-item active">
             <a class="nav-link" href="/{{current_user.id}}/games">My games</a>
           </li>
           <li class="nav-item active">
               <a class="nav-link" href="{{ url_for('games_form') }}">Add a game</a>
           </li>
-          {% endif %}
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url_for('games_index') }}">All games</a>
+          <li class="nav-item">
+              <a class="nav-link">Logged in with user {{ current_user.name }}</a>
           </li>
+          {% endif %}
         </ul>
         <div class="form-inline mt-2 mt-md-0">
             {% if current_user.is_authenticated %}

@@ -12,7 +12,6 @@ def games_index():
     if current_user.is_authenticated:
         ug = GameInstance.find_games_by_user(current_user.id)
         for game in ug:
-            print(game)
             usergames.append(game['name'])
     return render_template("games/list.html", games = VideoGame.query.all(), usergames = usergames)
 
@@ -38,7 +37,7 @@ def user_delete_game(user_id, game_id):
     return redirect(url_for("user_games", user_id=user_id))
 
 @app.route("/games/new/")
-@login_required(role="ANY")
+@login_required()
 def games_form():
     return render_template("games/new.html", form = GameForm())
 
