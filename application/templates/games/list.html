@@ -9,6 +9,7 @@
       <th scope="col">Game</th>
       <th scope"col">Release year</th>
       <th scope="col">Genre</th>
+      <th scope="col">Developer</th>
     </tr>
     <thead/>
     {% for game in games %}
@@ -16,6 +17,7 @@
       <td><a href="/games/{{game.id}}">{{ game.name }}</a></td>
       <td>{{ game.releaseyear }}</td>
       <td>{{ game.genre }}</td>
+      <td>{{ dev[game.developer_id-1].name }}</td>
       {% if current_user.is_authenticated %}
         {% if game.name not in usergames %}
           <td><form action="{{ url_for('user_add_game', user_id=current_user.id, game_id=game.id) }}" method="POST">

@@ -1,5 +1,6 @@
 from application import db
 from application.auth.models import User
+from application.developer.models import Developer
 
 from sqlalchemy.sql import text
 
@@ -12,13 +13,13 @@ class VideoGame(db.Model):
     name = db.Column(db.String(144), nullable=False)
     releaseyear = db.Column(db.Integer, nullable=False)
     genre = db.Column(db.String(50), nullable=False)
+    developer_id = db.Column(db.Integer, db.ForeignKey('developer.id'), nullable=False)
     
-    games = db.relationship("GameInstance", backref="videogame", lazy=True)
-
-    def __init__(self, name, year, genre):
+    def __init__(self, name, year, genre, developer):
         self.name = name
         self.releaseyear = year
         self.genre = genre
+        self.developer_id = developer
 
 class GameInstance(db.Model):
 
@@ -39,8 +40,8 @@ class GameInstance(db.Model):
         self.completed = False
 
     def find_games_by_user(account_id):
-        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear "
-                    "FROM videogame INNER JOIN "
+        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear, "
+                    "videogame.developer_id FROM videogame INNER JOIN "
                     "gameinstance ON videogame.id = gameinstance.game_id "
                     "INNER JOIN account ON account.id = gameinstance.account_id "
                     "WHERE gameinstance.account_id = :acc_id "
@@ -49,7 +50,7 @@ class GameInstance(db.Model):
 
         response = []
         for row in res:
-            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseyear":row[3]})
+            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseyear":row[3], "developer_id":row[4]})
         
         return response
 

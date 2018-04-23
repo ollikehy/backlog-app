@@ -62,6 +62,9 @@ from application.games import views
 from application.auth import models
 from application.auth import views
 
+from application.developer import models
+from application.developer import views
+
 #login part 2
 from application.auth.models import User
 

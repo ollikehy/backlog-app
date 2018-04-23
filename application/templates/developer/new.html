@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+
+<h3>Add a new developer</h3>
+    <form method="POST" action="{{url_for('developer_create') }}">
+        <table>
+            <tr>
+                <td style="padding-right:73px">
+                    {{ form.name.label }}
+                </td>
+                <td>
+                    {{ form.name }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form.country.label }}
+                </td>
+                <td>
+                    {{ form.country }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top:15px">
+                  <input type="submit" value="Add a new developer"/>
+                </td>
+              </tr>            
+        </table>
+    </form>
+{% endblock %}
