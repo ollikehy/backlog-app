@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{{ error }}
+<h3>List of games by {{ dev.name }}</h3>
+  <table class="table table-sm" style="max-width:1200px">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Game</th>
+        <th scope="col">Release year</th>
+        <th scope="col">Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for game in games %}
+      <tr>
+        <td>{{ game.name }}</td>
+        <td>{{ game.releaseyear }}</td>
+        <td>{{ game.genre }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if current_user.is_authenticated and "ADMIN" in current_user.roles() %}
+  <form action="{{ url_for('developer_delete', dev_id=dev_id) }}" method="POST">
+    <input type="submit" value="Delete entry for {{dev.name}}"/>
+  </form>
+  {% endif %}
+{% endblock %}

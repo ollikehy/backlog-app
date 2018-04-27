@@ -5,6 +5,7 @@ from application import app, db, login_required
 
 from application.developer.forms import DeveloperForm
 from application.developer.models import Developer
+from application.games.models import VideoGame
 
 @app.route("/developers", methods=["GET"])
 def developers_index():
@@ -25,5 +26,20 @@ def developer_create():
 
     db.session().add(d)
     db.session().commit()
+
+    return redirect(url_for("developers_index"))
+
+@app.route("/developers/<dev_id>", methods=["GET"])
+def developer_view(dev_id):
+    games = VideoGame.get_by_developer(dev_id)
+    developer = Developer.query.get(dev_id)
+    return render_template("developer/developer.html", games = games, dev = developer)
+
+@app.route("/developers/<dev_id>", methods=["POST"])
+@login_required(role="ADMIN")
+def developer_delete(dev_id):
+    d = Developer.query.get(dev_id)
+    db.session.delete(d)
+    db.session.commit()
 
     return redirect(url_for("developers_index"))

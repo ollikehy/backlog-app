@@ -21,6 +21,18 @@ class VideoGame(db.Model):
         self.genre = genre
         self.developer_id = developer
 
+    def get_by_developer(dev_id):
+        stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear"
+        " FROM videogame WHERE videogame.developer_id = :dev_id").params(dev_id=dev_id)
+
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"id":row[0],"name":row[1],"genre":row[2],"releaseyear":row[3]})
+        
+        return response
+
 class GameInstance(db.Model):
 
     __tablename__ = "gameinstance"

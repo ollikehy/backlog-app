@@ -11,7 +11,7 @@
     {% if current_user.is_authenticated and "ADMIN" in current_user.roles() %}
     <a href="/games/{{game.id}}/edit">Edit this entry</a>
     <form action="{{ url_for('game_delete', game_id=game.id) }}" method="POST">
-      <input type="submit" value="Delete entry for {{game.name}}"/>
+      <input style="margin-top:10px" type="submit" value="Delete entry for {{game.name}}"/>
     </form>
     {% endif %}
 {% endblock %}

@@ -57,22 +57,22 @@
         {{ form.developer }}
       </td>
       <td>
+          <button type="button" class="btn-link" style="background-color:#e3e5e8">
+              <a href="/developers/new"><font color="black">Add a developer</font></a>
+           </button>
+      </td>
+      <td>
           <ul>
             {% for error in form.developer.errors %}
             <li>{{ error }}</li>
             {% endfor %}
           </ul>
       </td>
-      <tr>
-        <td>
-        <a href="{{url_for('developer_form')}}">Add a developer</a>
-        </td>
-      </tr>
     </tr>
   </table>
   <tr>
     <td colspan="2">
-      <input type="submit" value="Add a new game"/>
+      <button class="btn-info" type="submit">Add a new game</button>
     </td>
   </tr>
 </form>
