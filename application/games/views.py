@@ -56,8 +56,10 @@ def games_create():
     form.developer.data = int(form.developer.data)
     print("FORM DEVELOPER: ")
     print(form.developer.data)
+    form.developer.choices = [(dev.id, dev.name) for dev in Developer.query.all()]
     if not form.validate():
         return render_template("games/new.html", form = form)
+
     g = VideoGame(form.name.data, form.releaseyear.data, form.genre.data, form.developer.data)
 
     db.session().add(g)

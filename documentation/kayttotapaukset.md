@@ -1,8 +1,9 @@
 Sovelluksen käyttötapauksia:
 
-* Kirjautuminen
-* Backlogin selaaminen
-* Pelin lisääminen sovellukseen
-* Pelin lisääminen käyttäjän listaan
+- [x] Kirjautuminen
+- [x] Backlogin selaaminen
+- [x] Pelin lisääminen sovellukseen
+- [x] Pelin lisääminen käyttäjän listaan
+- [x] Kehittäjän lisääminen sovellukseen
 * Pelin statuksen muuttaminen suoritetuksi
 * Pelien lajittelu julkaisuvuoden tai nimen perusteella

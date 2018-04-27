@@ -11,7 +11,7 @@ class GameForm(FlaskForm):
     genre = SelectField("Genre", choices=[('Action','Action'),('Adventure','Adventure'),
     ('Fighter','Fighter'),('Indie','Indie'),('Music','Music'),('Other','Other'),('Puzzle','Puzzle'),
     ('RPG','RPG'),('Shooter','Shooter'),('Simulation','Simulation'),('Sports','Sports')])
-    developer = SelectField("Developer", [validators.Optional()], choices=[(dev.id, dev.name) for dev in Developer.query.all()])
+    developer = SelectField("Developer", choices=[(dev.id, dev.name) for dev in Developer.query.all()])
 
     class Meta:
         csrf = False
