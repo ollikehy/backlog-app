@@ -56,14 +56,14 @@ def login_required(role="ANY"):
 #application
 from application import views
 
+from application.developer import models
+from application.developer import views
+
 from application.games import models
 from application.games import views
 
 from application.auth import models
 from application.auth import views
-
-from application.developer import models
-from application.developer import views
 
 #login part 2
 from application.auth.models import User
