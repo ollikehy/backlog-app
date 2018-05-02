@@ -12,12 +12,12 @@ def developers_index():
     return render_template("developer/list.html", developers=Developer.query.all())
 
 @app.route("/developers/new")
-@login_required
+@login_required()
 def developer_form():
     return render_template("developer/new.html", form = DeveloperForm())
 
 @app.route("/developers", methods=["POST"])
-@login_required
+@login_required()
 def developer_create():
     form = DeveloperForm(request.form)
 
@@ -37,7 +37,7 @@ def developer_view(dev_id):
     developer = Developer.query.get(dev_id)
     return render_template("developer/developer.html", games = games, dev = developer)
 
-@app.route("/developers/<dev_id>", methods=["POST"])
+@app.route("/developers/<dev_id>/delete", methods=["POST"])
 @login_required(role="ADMIN")
 def developer_delete(dev_id):
     d = Developer.query.get(dev_id)
