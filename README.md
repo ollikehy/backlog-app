@@ -10,5 +10,7 @@ Työn aiheena on ns. "backlogin" luominen videopeleille. Sovelluksen avulla käy
 
 [**Käyttötapaukset**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
 
+[**Tietokantataulujen luontilauseet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantataulut.md)
+
 ### Tietokantakaavio
 ![Tietokantakaavio](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantakaavio.png?raw=true)
