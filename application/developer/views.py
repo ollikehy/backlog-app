@@ -20,7 +20,7 @@ def developer_create():
     form = DeveloperForm(request.form)
 
     if not form.validate():
-        return render_template("developer.new.html", form = form)
+        return render_template("developer/new.html", form = form)
 
     d = Developer(form.name.data, form.country.data)
 
