@@ -12,10 +12,12 @@ def developers_index():
     return render_template("developer/list.html", developers=Developer.query.all())
 
 @app.route("/developers/new")
+@login_required
 def developer_form():
     return render_template("developer/new.html", form = DeveloperForm())
 
 @app.route("/developers", methods=["POST"])
+@login_required
 def developer_create():
     form = DeveloperForm(request.form)
 
