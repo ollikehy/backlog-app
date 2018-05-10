@@ -20,3 +20,8 @@ Tullaan lisäämään tulevaisuudessa:
 - [ ] Pelin statuksen muuttaminen suoritetuksi
 - [ ] Pelien lajittelu julkaisuvuoden tai nimen perusteella
 - [ ] Lisää ulkoasun tyylittelyä
+
+Omat kokemukset:
+
+Sovelluksen kehittäminen oli mielenkiintoinen prosessi, vaikka web-sovelluksia onkin jo jonkin verran tullut rakenneltua. Eniten kiinnosti pythonilla koodaaminen ja flask-frameworkin käyttöönotto. Mielikuvat pythonista ennen kurssia olivat aliarvioivat, kun taas kieli itsessään on hyvinkin monikäyttöinen ja tehokas työkalu.
+Tietokantojen kanssa työskentely oli myös hyvää kertausta tietokantojenperusteet-kurssille, jonka suorituksesta on aikaa jo lähes 1,5 vuotta!

@@ -7,6 +7,7 @@ Työn aiheena on ns. "backlogin" luominen videopeleille. Sovelluksen avulla käy
 
 ### Linkit
 [**Sovellus**](https://sheltered-tundra-91193.herokuapp.com/)
+
 (admin-käyttäjä: user, pass)
 
 [**Käyttöohjeet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttoohje.md)
