@@ -1,6 +1,8 @@
 Sovelluksen käyttötapauksia:
 
 - [x] Kirjautuminen
+
+    `SELECT user.username user.password FROM user`
 - [x] Backlogin selaaminen
 
     `SELECT * FROM videogame`
