@@ -2,7 +2,7 @@
 
 - [x] Kirjautuminen
 
-    `SELECT user.username user.password FROM user`
+    `SELECT user.username user.password FROM user WHERE user.username = 'username'`
 - [x] Backlogin selaaminen
 
     `SELECT * FROM videogame`
