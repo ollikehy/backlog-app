@@ -22,6 +22,8 @@ def games_index():
 @app.route("/<user_id>/games", methods=["GET"])
 @login_required()
 def user_games(user_id):
+    if (int(current_user.id) != int(user_id)):
+        return redirect(url_for("games_index"))
     games = GameInstance.find_games_by_user(user_id)
     developers = Developer.query.all()
     return render_template("games/userlist.html", user = User.query.get(user_id), games = games, dev = developers)

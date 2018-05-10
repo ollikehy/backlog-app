@@ -5,5 +5,8 @@ Sovelluksen käyttötapauksia:
 - [x] Pelin lisääminen sovellukseen
 - [x] Pelin lisääminen käyttäjän listaan
 - [x] Kehittäjän lisääminen sovellukseen
+
+Tullaan lisäämään tulevaisuudessa:
 - [ ] Pelin statuksen muuttaminen suoritetuksi
 - [ ] Pelien lajittelu julkaisuvuoden tai nimen perusteella
+- [ ] Lisää ulkoasun tyylittelyä
