@@ -9,6 +9,8 @@ Työn aiheena on ns. "backlogin" luominen videopeleille. Sovelluksen avulla käy
 [**Sovellus**](https://sheltered-tundra-91193.herokuapp.com/)
 (admin-käyttäjä: user, pass)
 
+[**Käyttöohjeet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttoohje.md)
+
 [**Käyttötapaukset**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
 
 [**Tietokantataulujen luontilauseet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantataulut.md)
