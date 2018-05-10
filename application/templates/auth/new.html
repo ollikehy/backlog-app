@@ -4,11 +4,12 @@
 <h3>Create a new user</h3>
 <form method="POST" action="{{ url_for('auth_create') }}">
   <table>
+    <div class="form-group">
     <tr>
-      <td>
+      <td style="font-size:18px">
         {{ form.name.label }}
       </td>
-      <td>
+      <td class="form-control">
         {{ form.name }}
       </td>
       <td>
@@ -20,10 +21,10 @@
       </td>
     </tr>
     <tr>
-      <td>
+      <td style="font-size:18px; padding-right:5px">
         {{ form.username.label }}
       </td>
-      <td>
+      <td class="form-control">
         {{ form.username }}
       </td>
       <td>
@@ -35,10 +36,10 @@
       </td>  
     </tr>
     <tr>
-      <td>
+      <td style="font-size:18px">
         {{ form.password.label }}
       </td>
-      <td>
+      <td class="form-control">
         {{ form.password }}
       </td>
       <td>
@@ -49,10 +50,11 @@
         </ul>
       </td>  
     </tr>
+    </div>
   </table>
   <tr>
     <td colspan="2">
-      <input type="submit" value="Register user"/>
+      <input class="btn btn-primary" style="margin-top:10px" type="submit" value="Register user"/>
     </td>
   </tr>
 </form>

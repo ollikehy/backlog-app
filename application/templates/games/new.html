@@ -8,7 +8,7 @@
       <td>
         {{ form.name.label }}
       </td>
-      <td>
+      <td class="form-control">
         {{ form.name }}
       </td>
       <td>
@@ -20,10 +20,10 @@
       </td>
     </tr>
     <tr>
-      <td>
+      <td style="padding-right:5px">
         {{ form.releaseyear.label }}
       </td>
-      <td>
+      <td class="form-control">
         {{ form.releaseyear }}
       </td>
       <td>
@@ -35,12 +35,14 @@
       </td>  
     </tr>
     <tr>
+      <div class="form-group">
       <td>
         {{ form.genre.label }}
       </td>
       <td>
         {{ form.genre }}
       </td>
+      </div>
       <td>
           <ul>
             {% for error in form.genre.errors %}

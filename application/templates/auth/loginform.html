@@ -5,27 +5,29 @@
 <h3>Login</h3>
 <form method="POST" action="{{ url_for('auth_login') }}">
     <table>
-        <tr>
-            <td>
-                {{ form.username.label}}
-            </td>
-            <td>
-                {{ form.username }}
-            </td>
-        </tr>
-        <tr>
-            <td>
-                {{ form.password.label }}
-            </td>
-            <td>
-                {{ form.password }}
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Login"/>
-            </td>
-        </tr>
+        <div class="form-group">
+            <tr>
+                <td style="padding-right:5px; font-size:18px">
+                    {{ form.username.label}}
+                </td>
+                <td class="form-control">
+                    {{ form.username }}
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size:18px;"> 
+                    {{ form.password.label }}
+                </td>
+                <td class="form-control">
+                    {{ form.password }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input class="btn btn-primary" type="submit" value="Login"/>
+                </td>
+            </tr>
+        </div>
     </table>
 </form>
 {% endblock %}
