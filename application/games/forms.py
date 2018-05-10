@@ -7,7 +7,7 @@ from application.developer.models import Developer
 
 class GameForm(FlaskForm):
     name = StringField("Name", [validators.Length(min=1)])
-    releaseyear = IntegerField("Release year", [validators.Length(min=4)])
+    releaseyear = SelectField("Release year", choices=[(str(i), i) for i in reversed(range(1950, 2018))])
     genre = SelectField("Genre", choices=[('Action','Action'),('Adventure','Adventure'),
     ('Fighter','Fighter'),('Indie','Indie'),('Music','Music'),('Other','Other'),('Puzzle','Puzzle'),
     ('RPG','RPG'),('Shooter','Shooter'),('Simulation','Simulation'),('Sports','Sports')])
