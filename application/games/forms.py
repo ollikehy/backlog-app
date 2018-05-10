@@ -19,10 +19,10 @@ class GameForm(FlaskForm):
 class EditForm(FlaskForm):
     name = StringField("Name", [validators.Optional(), validators.Length(min=1)])
     releaseyear = StringField("Release year", [validators.Optional(), validators.length(min=4)])
-    genre = SelectField("Genre", choices=[('Action','Action'),('Adventure','Adventure'),
+    genre = SelectField("Genre", [validators.Optional()], choices=[('Action','Action'),('Adventure','Adventure'),
     ('Fighter','Fighter'),('Indie','Indie'),('Music','Music'),('Other','Other'),('Puzzle','Puzzle'),
     ('RPG','RPG'),('Shooter','Shooter'),('Simulation','Simulation'),('Sports','Sports')])
-    developer = SelectField("Developer")
+    developer = SelectField("Developer", [validators.Optional()])
 
     class Meta:
         csrf = False

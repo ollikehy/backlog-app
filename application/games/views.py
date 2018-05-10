@@ -86,13 +86,10 @@ def games_edit(game_id):
     return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = form)
 
 @app.route("/games/<game_id>", methods=["POST"])
-@login_required()
+@login_required(role="ADMIN")
 def games_update(game_id):
     form = EditForm(request.form)
     form.developer.data = int(form.developer.data)
-
-    if not form.validate():
-        return render_template("games/edit.html", game = VideoGame.query.get(game_id), form = form)
 
     g = VideoGame.query.get(game_id)
     if form.name.data != "":
