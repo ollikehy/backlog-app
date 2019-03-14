@@ -1,20 +1,17 @@
-## Videopeli backlog
-Tämä on harjoitustyö kurssia [tietokantasovellus](https://materiaalit.github.io/tsoha-18/) varten
+## Videogame backlog
+This was a course work for the course [tietokantasovellus](https://materiaalit.github.io/tsoha-18/) (loosely translated = database application) at the University of Helsinki
 
-### Kuvaus
-Työn aiheena on ns. "backlogin" luominen videopeleille. Sovelluksen avulla käyttäjä voi seurata mitä videopelejä ei ole vielä pelannut, joita käyttäjän on ollut tarkoitus pelata. Käyttäjä voi käydä läpi listaa videopeleistä ja lajitella niitä esimerkiksi nimen tai julkaisuvuoden perusteella. Yleiseen listaan voi kuka tahansa käyttäjä lisätä pelejä. Käyttäjä voi lisätä omaan henkilökohtaiseen backlogiinsa videopelejä pelattavaksi yleisestä listasta, jonka jälkeen käyttäjä voi merkitä pelattuja pelejä suoritetuiksi.
+### Introduction
+The subject of the work is an application that allows you to create a backlog for videogames. With the application the user can follow which video games he has not yet played, that he wants to play. The user can go through a list of videogames and sort them by name or release year. Every user can add to the common list of video games. The user can add to his own personsal backlog from the common list, after which the user can mark the games they've played completed.
 
+### Links
+[**Application**](https://sheltered-tundra-91193.herokuapp.com/)
 
-### Linkit
-[**Sovellus**](https://sheltered-tundra-91193.herokuapp.com/)
+[**User instructions**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttoohje.md)
 
-(admin-käyttäjä: user, pass)
+[**Use cases**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
 
-[**Käyttöohjeet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttoohje.md)
+[**Database tables**](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantataulut.md)
 
-[**Käyttötapaukset**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
-
-[**Tietokantataulujen luontilauseet**](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantataulut.md)
-
-### Tietokantakaavio
+### Database schema
 ![Tietokantakaavio](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantakaavio.png?raw=true)
