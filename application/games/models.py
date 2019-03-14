@@ -51,6 +51,7 @@ class GameInstance(db.Model):
         self.game_id = game_id
         self.completed = False
 
+    @staticmethod
     def find_games_by_user(account_id):
         stmt = text("SELECT videogame.id, videogame.name, videogame.genre, videogame.releaseyear, "
                     "videogame.developer_id FROM videogame INNER JOIN "

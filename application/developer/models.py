@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 
 class Developer(db.Model):
 
-    __tablename__: "developer"
+    __tablename__ = "developer"
 
     id = db.Column(db.Integer, primary_key=True)
 
