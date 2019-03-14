@@ -7,11 +7,11 @@ The subject of the work is an application that allows you to create a backlog fo
 ### Links
 [**Application**](https://sheltered-tundra-91193.herokuapp.com/)
 
-[**User instructions**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttoohje.md)
+[**User instructions**](https://github.com/ollikehy/backlog-app/blob/master/documentation/useinstructions.md)
 
-[**Use cases**](https://github.com/ollikehy/backlog-app/blob/master/documentation/kayttotapaukset.md)
+[**Use cases**](https://github.com/ollikehy/backlog-app/blob/master/documentation/usecases.md)
 
-[**Database tables**](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantataulut.md)
+[**Database tables**](https://github.com/ollikehy/backlog-app/blob/master/documentation/databaseschema.md)
 
 ### Database schema
-![Tietokantakaavio](https://github.com/ollikehy/backlog-app/blob/master/documentation/tietokantakaavio.png?raw=true)
+![Databaseschema](https://github.com/ollikehy/backlog-app/blob/master/documentation/databaseschema.png?raw=true)
