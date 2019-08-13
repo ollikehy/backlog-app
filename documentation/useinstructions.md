@@ -1,4 +1,4 @@
-To use the application you need [python](https://www.python.org/downloads/). Besides python itself you need [pip](https://packaging.python.org/key_projects/#pip) which allows you to manage libraries (you should probably upgrade pip by using `pip install --upgrade pip`). While running the app you should also use virtual environment [venv](https://docs.python.org/3/tutorial/venv.html). For databases the application uses postgreSQL](https://www.postgresql.org/).
+To use the application you need [python](https://www.python.org/downloads/). Besides python itself you need [pip](https://packaging.python.org/key_projects/#pip) which allows you to manage libraries (you should probably upgrade pip by using `pip install --upgrade pip`). While running the app you should also use virtual environment [venv](https://docs.python.org/3/tutorial/venv.html). For databases the application uses [postgreSQL](https://www.postgresql.org/).
 
 Start by creating a virtual environment:
 * `python3 -m venv venv`
