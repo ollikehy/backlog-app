@@ -1,19 +1,24 @@
-FROM python:latest
+FROM python:alpine
 
 WORKDIR /backlog-app
 
-COPY . .
+COPY application ./application
+
+COPY Procfile run.py requirements.txt ./
 
 EXPOSE 5000
 
-RUN apt-get update && apt-get -y install curl
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python get-pip.py
+RUN apk add --no-cache python postgresql-dev gcc musl-dev &&\
+    pip install Flask &&\
+    pip install flask-sqlalchemy &&\
+    pip install flask-wtf &&\
+    pip install flask-login &&\
+    pip install psycopg2 &&\
+    apk del python postgresql-dev gcc musl-dev &&\
+    addgroup -S app &&\
+    adduser -S -G app app &&\
+    chown app -R .
 
-RUN pip install Flask
-RUN pip install flask-sqlalchemy
-RUN pip install flask-wtf
-RUN pip install flask-login
-RUN pip install psycopg2
+USER app
 
 CMD ["python", "run.py"]
